@@ -19,6 +19,7 @@ def test_env(*, verbose: bool = True):
     import torchvision.models as models
 
     print("is cuda avaliable: ", torch.cuda.is_available())
+    print("\n\n")
 
 
     print("[  set PYTHONPATH for moco  ]")
@@ -27,6 +28,7 @@ def test_env(*, verbose: bool = True):
 
     print("moco loader: ", moco.loader)
     print("moco builder: ", moco.builder)
+    print("\n\n")
 
 
 if __name__ == "__main__":
