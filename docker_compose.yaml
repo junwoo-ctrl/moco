@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+    test_moco:
+        build:
+            context: .
+        ports:
+            - 9999:9999
+        shm_size: "400gb"
+        volumes:
+          - type: bind
+            source: /home/mearinee/workspace/ml/ssl/moco
+            target: /usr/src/app/moco
