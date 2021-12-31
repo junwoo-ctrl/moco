@@ -4,3 +4,8 @@
 
 # .pyc
 *.pyc
+
+
+# model weight
+
+*.onnx
