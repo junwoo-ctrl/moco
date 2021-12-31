@@ -6,3 +6,6 @@ pytorch_lightning==1.5.0
 torchinfo==1.6.1
 arrow==1.2.1
 onnxruntime==1.10.0
+fastapi==0.70.1
+uvicorn==0.16.0
+uvloop==0.16.0
