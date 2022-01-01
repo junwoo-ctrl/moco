@@ -7,6 +7,7 @@ from fastapi import FastAPI
 
 from rest.router.health_check import router as health_check_router
 from rest.router.inference import router as inference_router
+from rest.router.async_inference import router as async_inference_router
 
 
 def create_app():
@@ -20,7 +21,8 @@ def create_app():
 
 def include_router(application: FastAPI):
     application.include_router(health_check_router)
-    application.include_router(inference_router)
+    # application.include_router(inference_router)
+    application.include_router(async_inference_router)
 
 
 app = create_app()

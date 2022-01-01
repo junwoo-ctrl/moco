@@ -81,7 +81,7 @@ class MoCo:
             sample_image_tensor = sample_image_tensor.cuda()
         return sample_image_tensor
 
-    def inference(self, sample_image_path: str, is_gpu: bool = False):
+    async def inference(self, sample_image_path: str, is_gpu: bool = False):
         image_tensor = self._convert_image_to_tensor(sample_image_path=sample_image_path, is_gpu=is_gpu)
         hat = self.torch_model(image_tensor).to('cpu')
         _, preds = hat.topk(5, 1, True, True)
@@ -89,7 +89,7 @@ class MoCo:
         preds = [int(pred[0]) for pred in preds]
         return preds
 
-    def inference_onnx(self, sample_image_path: str):
+    async def inference_onnx(self, sample_image_path: str):
         image_tensor = self._convert_image_to_tensor(sample_image_path=sample_image_path, is_gpu=False)
         image_vector = image_tensor.cpu().numpy()
 
