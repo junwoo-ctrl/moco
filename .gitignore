@@ -4,6 +4,7 @@
 
 # .pyc
 *.pyc
+__pycache__
 
 
 # model weight
